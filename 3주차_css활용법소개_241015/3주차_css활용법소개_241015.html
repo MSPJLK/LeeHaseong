@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+    </head>
+
+    <link href="./3주차_css활용법소개_241015.css" rel="stylesheet" />
+
+    <script
+        src="https://unpkg.com/react@18/umd/react.development.js"
+        crossorigin
+    ></script>
+    <script
+        src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"
+        crossorigin
+    ></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+
+    <body>
+        <div class="post_list">
+            <div class="label_wrapper">
+                <div class="idx">번호</div>
+                <div class="title">제목</div>
+                <div class="author">작성자</div>
+                <div class="date">날짜</div>
+            </div>
+
+            <div class="post_wrapper">
+                <div class="idx">6</div>
+                <div class="title">안녕</div>
+                <div class="author">민씨</div>
+                <div class="date">24.10.15</div>
+                <div class="btn"></div>
+            </div>
+            <div class="post_wrapper">
+                <div class="idx">5</div>
+                <div class="title">집에보내줘</div>
+                <div class="author">신씨</div>
+                <div class="date">24.10.15</div>
+                <div class="btn"></div>
+            </div>
+            <div class="post_wrapper">
+                <div class="idx">4</div>
+                <div class="title">아니 왜 안되냐고</div>
+                <div class="author">박씨</div>
+                <div class="date">24.10.15</div>
+                <div class="btn"></div>
+            </div>
+            <div class="post_wrapper">
+                <div class="idx">3</div>
+                <div class="title">깃헙어렵다</div>
+                <div class="author">장씨</div>
+                <div class="date">24.10.15</div>
+                <div class="btn"></div>
+            </div>
+            <div class="post_wrapper">
+                <div class="idx">2</div>
+                <div class="title">안녕</div>
+                <div class="author">이씨</div>
+                <div class="date">24.10.15</div>
+                <div class="btn"></div>
+            </div>
+            <div class="post_wrapper">
+                <div class="idx">1</div>
+                <div class="title">자격증공부제발</div>
+                <div class="author">김씨</div>
+                <div class="date">24.10.15</div>
+                <div class="btn"></div>
+            </div>
+        </div>
+
+        <main id="root"></main>
+    </body>
+    <script type="text/babel">
+        const styles = {
+            display: "flex",
+            justifyContent: "center",
+            alignItems: "center",
+
+            color: "tomato",
+            fontSize: "24px",
+        };
+
+        function App() {
+            return (
+                <>
+                    <div style={{ ...styles }}>안녕</div>
+                </>
+            );
+        }
+
+        const Root = document.getElementById("root");
+        ReactDOM.render(<App />, Root);
+    </script>
+</html>
