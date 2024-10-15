@@ -1,4 +1,4 @@
-###참고 블로그
+### 참고 블로그
 
 CSS 적용의 우선순위
 (https://blinders.tistory.com/87)
