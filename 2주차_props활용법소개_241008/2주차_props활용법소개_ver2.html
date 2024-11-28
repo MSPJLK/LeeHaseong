@@ -62,10 +62,7 @@
         <!-- ********************************* -->
         <!-- React와 babel을 CDN으로 다운로드 합니다 -->
         <!-- ********************************* -->
-        <script
-            src="https://unpkg.com/react@18/umd/react.development.js"
-            crossorigin
-        ></script>
+        <script src="https://unpkg.com/react@18/umd/react.development.js" crossorigin></script>
         <script
             src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"
             crossorigin
@@ -174,15 +171,7 @@
         }
 
         function InputField({ ...props }) {
-            const {
-                id,
-                placeholder,
-                onChange,
-                value,
-                required,
-                label,
-                textarea,
-            } = props;
+            const { id, placeholder, onChange, value, required, label, textarea } = props;
 
             return (
                 <fieldset className={id}>
@@ -191,26 +180,18 @@
                         <b>{required && " * "}</b>
 
                         {textarea ? (
-                            <textarea
-                                id={id}
-                                placeholder={placeholder}
-                                onChange={onChange}
-                            />
+                            <textarea id={id} placeholder={placeholder} onChange={onChange} />
                         ) : (
                             <input
                                 id={id}
-                                type={
-                                    id === "password_ID" ? "password" : "text"
-                                }
+                                type={id === "password_ID" ? "password" : "text"}
                                 placeholder={placeholder}
                                 onChange={onChange}
                             />
                         )}
                     </label>
 
-                    <b>
-                        {value || !required ? <br /> : "필수입력 사항 입니다."}
-                    </b>
+                    <b>{value || !required ? <br /> : "필수입력 사항 입니다."}</b>
                 </fieldset>
             );
         }

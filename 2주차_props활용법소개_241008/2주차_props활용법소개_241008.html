@@ -62,10 +62,7 @@
         <!-- ********************************* -->
         <!-- React와 babel을 CDN으로 다운로드 합니다 -->
         <!-- ********************************* -->
-        <script
-            src="https://unpkg.com/react@18/umd/react.development.js"
-            crossorigin
-        ></script>
+        <script src="https://unpkg.com/react@18/umd/react.development.js" crossorigin></script>
         <script
             src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"
             crossorigin
@@ -162,6 +159,7 @@
                         value={title}
                         required
                     />
+
                     <InputField
                         id="content__ID"
                         placeholder="내용을 입력해 주세요."
@@ -169,10 +167,8 @@
                         value={content}
                         required
                     />
-                    <InputField
-                        id="youtube__ID"
-                        placeholder="링크를 입력해 주세요."
-                    />
+
+                    <InputField id="youtube__ID" placeholder="링크를 입력해 주세요." />
 
                     {/* 위에서 봤던 valid 변수를 통해 버튼의 활성/비활성 상태를 토글합니다 */}
                     {/* 만약 4종 INPUT중 빈값이 있다면 valid는 false이고, 버튼은 !valid이기 때문에 true가 됩니다. */}
@@ -201,9 +197,6 @@
                 //** 각 input field별로 유동적인 css 적용을 위해 id로 class를 구분하였습니다. */
                 <fieldset className={id}>
                     <label>
-                        {/* 선언한 객체 innerText에 [id]로 key를 호출하여 해당하는 한글명을 불러옵니다 */}
-                        {/* 이렇게 할 경우 굳이 한글명을 위해 props을 따로 내려주지 않을 수 있어 코드 다이어트가 가능합니다 */}
-                        {/* innerText.author__ID = "작성지", ... 이런식 */}
                         {innerText[id]}
 
                         {/* 필수값은 required라는 이름으로 props을 내려주었습니다. */}
@@ -213,17 +206,11 @@
                         {/* 만약 id가 content라면, textarea를 생성하고, 아닐경우 input을 생성합니다 */}
                         {/* 이러한 조건 없이 input과 textarea를 구분지으려면 props로 내려주어 할당시킬 수도 있습니다 */}
                         {id === "content__ID" ? (
-                            <textarea
-                                id={id}
-                                placeholder={placeholder}
-                                onChange={onChange}
-                            />
+                            <textarea id={id} placeholder={placeholder} onChange={onChange} />
                         ) : (
                             <input
                                 id={id}
-                                type={
-                                    id === "password__ID" ? "password" : "text"
-                                }
+                                type={id === "password__ID" ? "password" : "text"}
                                 placeholder={placeholder}
                                 onChange={onChange}
                             />
@@ -241,9 +228,7 @@
                     {/* value는 상위컴포넌트에서 관리되는 state를 쌩으로 꽂아 넣었기 때문에 changeEvent에 대응할 수 있습니다 */}
                     {/* 따라서, input의 value가 변경될 때 마다 해당 조건을 실시간으로 검토하여 "필수입력" 메세지가 토글될 수 있습니다 */}
                     {/* 만약 input value가 변경되면서 state가 갱신되면, component가 re-render되어 "필수입력" 메세지가 삭제됩니다 */}
-                    <b>
-                        {value || !required ? <br /> : "필수입력 사항 입니다."}
-                    </b>
+                    <b>{value || !required ? <br /> : "필수입력 사항 입니다."}</b>
                 </fieldset>
             );
         }
